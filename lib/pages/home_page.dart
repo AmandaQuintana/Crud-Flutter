@@ -12,9 +12,14 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Home Page'),
-        backgroundColor: Colors.blueAccent,
+     appBar: AppBar(
+      title: const Text(
+        'Home Page',
+        style: TextStyle(
+          color: Colors.white,
+        ),
+      ),
+      backgroundColor: Colors.deepPurpleAccent,
       ),
       body: FutureBuilder<List<Map<String, dynamic>>>(
         future: getUsers(),
@@ -68,7 +73,7 @@ class _HomeState extends State<Home> {
           setState(() {});
         },
         child: Icon(Icons.add),
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Colors.deepPurpleAccent,
       ),
     );
   }

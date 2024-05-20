@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:crud_firebase/services/firebase_service.dart';
+import 'package:flutter/material.dart';
 
 class UpdateUserPage extends StatefulWidget {
   const UpdateUserPage({Key? key}) : super(key: key);
@@ -32,7 +32,13 @@ class _UpdateUserPageState extends State<UpdateUserPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Update User Page'),
+      title: const Text(
+        'Update User Page',
+        style: TextStyle(
+          color: Colors.white,
+        ),
+      ),
+      backgroundColor: Colors.deepPurpleAccent,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -62,7 +68,7 @@ class _UpdateUserPageState extends State<UpdateUserPage> {
             const SizedBox(height: 16),
             TextField(
               controller: passwordController,
-              obscureText: true,
+              obscureText: true, // Para ocultar la clave
               decoration: const InputDecoration(
                 hintText: 'Clave',
               ),
@@ -80,8 +86,16 @@ class _UpdateUserPageState extends State<UpdateUserPage> {
                   Navigator.pop(context);
                 });
               },
-              child: const Text('Actualizar'),
-            ),
+              child: const Text(
+                'Actualizar',
+                style: TextStyle(
+                  color: Colors.white, // Cambia el color del texto a blanco
+                ),
+              ),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.deepPurpleAccent,
+              ),
+            )
           ],
         ),
       ),

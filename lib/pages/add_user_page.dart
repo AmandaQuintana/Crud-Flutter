@@ -19,7 +19,13 @@ class _AddUserPageState extends State<AddUserPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Add User Page'),
+        title: Text(
+          'Add User Page',
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
+        backgroundColor: Colors.deepPurpleAccent,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -67,7 +73,15 @@ class _AddUserPageState extends State<AddUserPage> {
                   Navigator.pop(context);
                 });
               },
-              child: const Text('Guardar'),
+              child: const Text(
+                'Guardar',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.deepPurpleAccent,
+              ),
             )
           ],
         ),
