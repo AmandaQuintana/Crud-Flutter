@@ -33,7 +33,7 @@ class _UpdateUserPageState extends State<UpdateUserPage> {
     return Scaffold(
       appBar: AppBar(
       title: const Text(
-        'Update User Page',
+        'Actualizar Usuario',
         style: TextStyle(
           color: Colors.white,
         ),

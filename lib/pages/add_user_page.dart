@@ -20,7 +20,7 @@ class _AddUserPageState extends State<AddUserPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Add User Page',
+          'Agregar Usuario',
           style: TextStyle(
             color: Colors.white,
           ),
