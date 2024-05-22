@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 FirebaseFirestore db = FirebaseFirestore.instance;
 
@@ -44,6 +45,19 @@ Future<void> updateUser(String documentId, Map<String, dynamic> newData) async {
     await db.collection('usuario').doc(documentId).set(newData);
   } catch (e) {
     print('Error updating user: $e');
+  }
+}
+
+Future<bool> signInWithEmailAndPassword(String email, String password) async {
+  try {
+    UserCredential userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+      email: email,
+      password: password,
+    );
+    return true;
+  } catch (e) {
+    print('Error signing in: $e');
+    return false;
   }
 }
 

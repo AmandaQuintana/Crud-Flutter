@@ -1,9 +1,10 @@
 import 'package:crud_firebase/pages/add_user_page.dart';
 import 'package:crud_firebase/pages/home_page.dart';
 import 'package:crud_firebase/pages/update_user_page.dart';
+import 'package:crud_firebase/pages/login_page.dart'; // Nueva importación
 import 'package:flutter/material.dart';
 
-//Importaciones de Firebase
+// Importaciones de Firebase
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
@@ -16,27 +17,24 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context){
-
+  Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Material App',
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      initialRoute: '/',
+      initialRoute: '/login', // Cambia la ruta inicial a la página de inicio de sesión
       routes: {
-        '/': (context) => const Home(),
+        '/login': (context) => LoginPage(), // Nueva ruta
+        '/home': (context) => const Home(),
         '/add': (context) => const AddUserPage(),
         '/update': (context) => const UpdateUserPage(),
       },
       debugShowCheckedModeBanner: false,
     );
-
   }
-
 }
