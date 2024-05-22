@@ -61,4 +61,16 @@ Future<bool> signInWithEmailAndPassword(String email, String password) async {
   }
 }
 
+Future<void> createUserWithEmailAndPassword(String email, String password) async {
+  try {
+    await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      email: email,
+      password: password,
+    );
+  } catch (e) {
+    print('Error de registro: $e');
+    rethrow; // Reenviar la excepción para manejarla en el lugar donde se llama a esta función.
+  }
+}
+
 

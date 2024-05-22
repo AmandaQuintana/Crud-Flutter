@@ -1,7 +1,8 @@
 import 'package:crud_firebase/pages/add_user_page.dart';
 import 'package:crud_firebase/pages/home_page.dart';
+import 'package:crud_firebase/pages/register_page.dart';
 import 'package:crud_firebase/pages/update_user_page.dart';
-import 'package:crud_firebase/pages/login_page.dart'; // Nueva importación
+import 'package:crud_firebase/pages/login_page.dart';
 import 'package:flutter/material.dart';
 
 // Importaciones de Firebase
@@ -27,9 +28,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.deepPurple,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      initialRoute: '/login', // Cambia la ruta inicial a la página de inicio de sesión
+      initialRoute: '/login',
       routes: {
-        '/login': (context) => LoginPage(), // Nueva ruta
+        '/login': (context) => LoginPage(),
+        '/register': (context) => RegisterPage(),
         '/home': (context) => const Home(),
         '/add': (context) => const AddUserPage(),
         '/update': (context) => const UpdateUserPage(),
